@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Supplychain Finance</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+
+  <body>
+    <h1>Supplychain Finance</h1>
+    <div class="nav" id="accountNav">
+      <ul>
+        <li><a onclick="Nav.addCompany()">Add company</a></li>
+        <li><a onclick="Nav.signReceipt()">Sign receipt</a></li>
+        <li><a onclick="Nav.transferReceipt()">Transfer receipt</a></li>
+        <li><a onclick="Nav.financing()">Financing</a></li>
+        <li><a onclick="Nav.payDebt()">Pay debt</a></li>
+      </ul>
+    </div>
+    
+    <div id="account">
+      <label for="account-input" id="current-account">Account ID:</label>
+      <input id="account-input" type="text" ></input>
+      <p>Name: <strong id="name" class="message"></strong></p>
+      <p>Address: <strong id="account-address" class="message"></strong></p>
+      <p>Balance: <strong id="balance" class="message"></strong></p>
+      <button id="send" onclick="App.changeAccount()">Change account</button>
+      <br>
+    </div>
+
+    <div id="add" class="feature">
+        <h3>Add company</h3>
+        <label for="add-cname">cname:</label>
+        <input type="text" id="add-cname" /><br>
+
+        <br><label for="add-caddress">caddress:</label>
+        <input type="text" id="add-caddress" /><br>
+
+        <br><label for="add-ctype">ctype:</label>
+        <input type="text" id="add-ctype" /><br>
+
+        <br><label for="add-cbalance">cbalance:</label>
+        <input type="text" id="add-cbalance" /><br>
+
+        <p class="status" id="status0"></p>
+        <button onclick="App.addCompany()">Add company</button>
+    </div>
+
+    <div id="sign" class="feature">
+        <h3>Sign receipt</h3>
+        <label for="sign-caddress">caddress:</label>
+        <input type="text" id="sign-caddress" /><br>
+
+        <br><label for="sign-amount">amount:</label>
+        <input type="text" id="sign-amount" /><br>
+
+        <br><label for="sign-time">time:</label>
+        <input type="text" id="sign-time" /><br>
+
+        <p class="status" id="status1"></p>
+        <button onclick="App.signReceipt()">Sign receipt</button>
+    </div>
+
+    <div id="transfer" class="feature">
+        <h3>Transfer receipt</h3>
+        <label for="transfer-caddress">caddress:</label>
+        <input type="text" id="transfer-caddress" /><br>
+
+        <br><label for="transfer-amount">amount:</label>
+        <input type="text" id="transfer-amount" /><br>
+
+        <br><label for="transfer-rid">rid:</label>
+        <input type="text" id="transfer-rid" /><br>
+
+        <p class="status" id="status2"></p>
+        <button onclick="App.transferReceipt()">Transfer receipt</button>
+    </div>
+
+    <div id="financing" class="feature">
+        <h3>Financing</h3>
+
+        <label for="financing-rid">rid:</label>
+        <input type="text" id="financing-rid" /><br>
+
+        <p class="status" id="status3"></p>
+        <button onclick="App.financing()">Financing</button>
+    </div>
+
+    <div id="pay" class="feature">
+        <h3>Pay debt</h3>
+        
+        <p class = "status" id="status4"></p>
+        <button onclick="App.payDebt()">Pay debt</button>
+    </div>
+
+    <script src="./index.js"></script>
+
+  </body>
+</html>
