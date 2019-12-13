@@ -1,6 +1,5 @@
 import Web3 from "../node_modules/web3";
-import "../src/index.css"
-import metaCoinArtifact from "../../build/contracts/SupplyChain.json";
+import "../src/index.css";
 
 let accounts;
 let company;
@@ -14,14 +13,10 @@ const App = {
         const { web3 } = this;
 
         try {
-            const networkId = await web3.eth.net.getId();
-            const deployedNetwork = metaCoinArtifact.networks[networkId];
             this.meta = new web3.eth.Contract(
-                metaCoinArtifact.abi,
-                deployedNetwork.address,
+                [{ "constant": false, "inputs": [], "name": "payDebt", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "rid", "type": "uint256" }], "name": "getReceiptrstatus", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "BANK", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }, { "name": "", "type": "uint256" }], "name": "receiptMap", "outputs": [{ "name": "rfrom", "type": "string" }, { "name": "rto", "type": "string" }, { "name": "rfromAddress", "type": "address" }, { "name": "rtoAddress", "type": "address" }, { "name": "amount", "type": "uint256" }, { "name": "endtime", "type": "uint256" }, { "name": "rstatus", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "amount", "type": "uint256" }, { "name": "rid", "type": "uint256" }], "name": "transferReceipt", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "cname", "type": "string" }, { "name": "caddress", "type": "address" }, { "name": "ctype", "type": "bool" }, { "name": "cbalance", "type": "uint256" }], "name": "addCompany", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }], "name": "getName", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "rid", "type": "uint256" }], "name": "getReceiptrfrom", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "rid", "type": "uint256" }], "name": "getReceiptrto", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "rid", "type": "uint256" }], "name": "financing", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "companyMap", "outputs": [{ "name": "cname", "type": "string" }, { "name": "caddress", "type": "address" }, { "name": "ctype", "type": "bool" }, { "name": "cbalance", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "rid", "type": "uint256" }], "name": "getReceiptamount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "caddress", "type": "address" }, { "name": "amount", "type": "uint256" }, { "name": "time", "type": "uint256" }], "name": "signReceipt", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "caddress", "type": "address" }], "name": "getBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }],
+                0xff3ddaf1cf0aade533b9e3e37c9a1d8cbc28fb7e,
             );
-            //var address = "0xccccc"
-            //var metacoin=new web3.eth.Contract(abi,address);
 
             // get accounts
             accounts = await web3.eth.getAccounts();
